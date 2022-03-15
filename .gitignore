@@ -1,4 +1,5 @@
 .DS_Store
+.firebase
 node_modules
 /dist
 
@@ -24,3 +25,4 @@ pnpm-debug.log*
 
 # local env files
 env/env.*
+
