@@ -1,0 +1,85 @@
+$color-main: #3bbec0;
+$color-white: #fff;
+$color-black: #333;
+$color-gray: darken($color-white, 5%);
+
+@mixin no-touch() {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  > .header {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: $color-main;
+    color: #fff;
+
+    .btn {
+      width: 42px;
+      text-align: center;
+      cursor: pointer;
+      &.blank {
+        cursor: auto;
+        visibility: hidden;
+      }
+    }
+    .title {
+      flex-grow: 1;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  > .body {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  > .footer {
+    padding: 16px 16px 28px 16px;
+    border-top: solid 1px #ccc;
+
+    .mes {
+      margin-bottom: 8px;
+    }
+  }
+
+  .common-btn {
+    background-color: $color-main;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    min-width: 80px;
+    font-weight: bold;
+    border-radius: 4px;
+    @include no-touch;
+
+    &:active {
+      background-color: darken($color: $color-main, $amount: 8);
+    }
+
+    &:disabled {
+      background-color: #aaa;
+      color: #efefef;
+    }
+  }
+}
